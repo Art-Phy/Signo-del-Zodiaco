@@ -1,8 +1,18 @@
 ### Tu Signo del Zodiaco ###
 
+# importamos datetime de Python para tener un control de los días de cada mes.
+from datetime import datetime
+
+def fecha_valida(día, mes):
+    try:
+        datetime(2024, mes, día) # importante para los años bisiestos
+        return True
+    except ValueError:
+        return False
+    
 # creamos una función dónde se indican las fechas de inicio de los signos del zodiaco.
 def signos_zodiaco(día, mes):
-    # definimos los rangos de inicio y fin de cada signo del zodiaco
+    # definimos los rangos de inicio y fin de cada signo del zodiaco usando tuplas.
     signos_fechas = [((21, 3), (20, 4), 'aries'),
                      ((21, 4), (20, 5), ' tauro'),
                      ((21, 5), (20, 6), 'géminis'),
@@ -25,11 +35,30 @@ def signos_zodiaco(día, mes):
         if(mes == inicio_mes and día >= inicio_dia) or (mes == fin_mes and día <= fin_dia):
             return signo
         
-    return "Algún dato es incorrecto, por favor empieza de nuevo" # por si algo se escribe mal
+def solicitar_fecha():
+    while True:
+        try:
+            # entrada del usuario
+            día = int(input("Ingresa el día en que naciste: "))
+            mes = int(input("Ingresa el mes: "))
 
-# entrada del usuario
-día = int(input("Ingresa el día en que naciste: "))
-mes = int(input("Ingresa el mes: "))
+            # verificar la fecha
+            if fecha_valida(día, mes):
+                return día, mes
+            else:
+                print("La fecha ingresada no es válida. Inténtalo de nuevo.")
+        except ValueError:
+            print("Ingresa sólo valores numéricos, gracias.")
 
-# mostrar el resultado
-print(f"Tu signo del zodiaco es: ", signos_zodiaco(día, mes))
+# principal
+while True:
+    día, mes = solicitar_fecha()
+
+    # mostrar el signo zodiacal
+    print("Tu signo del zodiaco es:", signos_zodiaco(día, mes).title())
+
+# añadimos pregunta para que el usuario decida si quiere seguir o no
+    repetir = input("¿Quieres probar con otra fecha? (s/n): ").lower()
+    if repetir != 's':
+        print("Entendido. ¡Nos vemos!")
+        break
