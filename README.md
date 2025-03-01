@@ -1,4 +1,4 @@
-# Bienvenid@s a Tu signo del Zodiaco
+## Bienvenid@s a Tu signo del Zodiaco
 
 #### Se trata de un pequeño ejercicio para practicar Python teniendo como objetivo crear un programa que nos indique qué signo del zodiaco corresponde a la fecha de nacimiento que se le indique al programa.
 
