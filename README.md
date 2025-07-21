@@ -1,8 +1,6 @@
 ## Bienvenid@s a Tu signo del Zodiaco
 
-#### Se trata de un pequeño ejercicio para practicar Python teniendo como objetivo crear un programa que nos indique qué signo del zodiaco corresponde a la fecha de nacimiento que se le indique al programa.
-
-#### Tu Signo del Zodiaco es un buen ejercicio para practicar Python. Se puede resolver de muchas maneras diferentes, lo que da bastante juego para practicar lo que vamos aprendiendo.
+#### Es un programa simple que nos indica qué signo del zodiaco corresponde a la fecha de nacimiento que se le indique al programa.
 
 ### Qué he usado
 
